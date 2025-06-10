@@ -26,18 +26,14 @@
 ## 安装指南
 
 ```bash
-# 克隆仓库
 git clone https://github.com/kyuuseiryuu/ai-cmd.git
 cd ai-cmd
+uv tool install .
+```
+或者
 
-# 安装依赖
-# pip install -r requirements.txt
-uv sync
-
-# 添加可执行权限
-chmod +x ai.py
-# 或安装到系统命令路径
-mv ai.py /usr/local/bin/ai
+```bash
+alias ai="uvx --from git+https://github.com/kyuuseiryuu/ai-cmd ai"
 ```
 
 ---
