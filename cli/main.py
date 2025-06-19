@@ -61,11 +61,12 @@ class AIHelper:
         调用AI获取命令。
         """
         if not self.model:
-            raise click.ClickException("模型名称未配置，无法调用 API。")
+            raise click.ClickException("模型名称未配置，请运行 `ai config --model <your-model-name>` 设置。")
 
         system_msg = (
             "你是一个命令行大师，接受用户的功能目标描述，返回实现该功能的命令。"
-            + ("并对每个参数做详细解释，输出格式要对控制台友好。" if explain else "只返回命令，不要包含任何额外的解释或markdown标记。")
+            + ("并对每个参数做详细解释，输出格式要对控制台友好。不要包含任何额外的markdown标记" 
+               if explain else "只返回命令，不要包含任何额外的解释或markdown标记。")
         )
         
         try:
